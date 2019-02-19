@@ -1,1 +1,1 @@
-# Week-7-Challenge-Note-App
+# Week 7 Challenge: Note App
