@@ -12,13 +12,18 @@ checkListOfNotes();
 function checkCreateNewNote() {
   console.log('  .createNote adds new Note to NoteList')
   var noteList = new NoteList
-  noteList.list = []
+  var note1 = new Note('Orb is Horse')
+  var note2 = new Note('Glass Shark')
+  var testArray = [note1, note2]
+  console.log(note1)
+  console.log(note2)
+  console.log(testArray)
   noteList.createNote('Orb is Horse')
   noteList.createNote('Glass Shark')
-  noteList.createNote('Mbmbambino!')
-  assert.isTrue(noteList.listAll().includes(
-    'Orb is Horse', 
-    'Glass Shark', 
-    'Mbmbambino!'))
+  for (i = 0; i < noteList.listAll().length; i++) {
+    console.log(noteList.listAll()[i].viewText())
+    console.log(testArray[i].viewText())
+    assert.isTrue(noteList.listAll()[i].viewText() === testArray[i].viewText())
+  };
 };
 checkCreateNewNote()
